@@ -8,15 +8,15 @@
     <string name="app_settings">App 設定</string>
     <string name="flight_data">飛行數據</string>
     <string name="editor">編輯器</string>
-    <string name="upload_mission">發送任務</string>
-    <string name="download_mission">載入任務</string>
+    <string name="upload_mission">上傳任務</string>
+    <string name="download_mission">下載任務</string>
     
     <!-- Drone Setup tabs -->
     <string name="screen_tuning">調整參數</string>
     <string name="screen_cal">校正</string>
     <string name="screen_checklist">檢查清單</string>
     <string name="screen_rc">遙控</string>
-    <string name="screen_parameters">參數</string>
+    <string name="screen_parameters">參數值</string>
     
     <!-- App Settings/Preferences -->
     <string name="pref_connection_type">數傳連接方式</string>
@@ -109,6 +109,7 @@
     <string name="select_file_to_open">選擇要開啟的文件:</string>
     <string name="no_files">沒有文件</string>
     <string name="error_when_opening_file">開啟文件時發生錯誤</string>
+    <string name="status_file_opened">已開啟檔案</string>
     <string name="save">儲存</string>
     <string name="open">開啟</string>
     <string name="write">寫入</string>
@@ -139,7 +140,7 @@
     <string name="mode_acro">Acro 特技模式 - 飛友可直接控制旋轉速率、飛行姿態</string>
     <string name="mode_althold">Alt Hold 定高模式 - 系統自動油門控制並保持飛行高度。此模式不需要GPS參與</string>
     <string name="mode_auto">Auto 自動模式 - 執行已儲存在無人機上的任務</string>
-    <string name="mode_circle">Circle 盤旋模式 - 無人機以盤旋在興趣點上並朝向盤旋的中心點。此模式需要 GPS 鎖定。</string>
+    <string name="mode_circle">Circle 盤旋模式 - 無人機以盤旋在感興趣區域上並朝向盤旋的中心點。此模式需要 GPS 鎖定。</string>
     <string name="mode_drift">Drift 飄移模式 - 結合橫滾軸(roll)及方向軸(yaw)的控制來提供更自然、更直覺的飛行。此模式需要 GPS 鎖定。</string>
     <string name="mode_guided">Guided 導引模式 - 從地面站進行位置控制。此模式需要 GPS 鎖定。</string>
     <string name="mode_land">Land 降落模式 - 降落在目前的位置。此模式需要 GPS 鎖定。</string>
@@ -150,17 +151,23 @@
     <string name="mode_sport">Sport 運動模式 - 飛友可在自動平衡的狀態下，直接控制旋轉速率、飛行姿態。</string>
     <string name="mode_stabilize">Stabilize 自穩模式 - 讓無人機保持水平飛行。</string>
     <string name="mode_poshold">PosHold 定位模式 - 為 AC 3.2 以前版本的 Hybrid 混合模式，作用如同 Loiter 停懸模式，並直接反應搖桿的控制。</string>
-
+    <string name="mode_follow">無人機會跟隨您的手持裝置GPS坐標位置移動。</string>
     <!-- Waypoint types -->
     <string name="waypointType_Waypoint">航點</string>
     <string name="waypointType_SplineWaypoint">非線性航點</string>
     <string name="waypointType_TakeOff">起飛</string>
     <string name="waypointType_RTL">返航</string>
     <string name="waypointType_Land">降落</string>
+    <string name="waypointType_Change_Speed">改變速度Change Speed</string>
+    <string name="waypointType_Condition_Yaw">設定方向軸(Yaw)</string>
+    <string name="waypointType_Camera_Trigger">攝影機觸發器</string>
+    <string name="waypointType_Set_Servo">設定伺服機</string>
+    <string name="waypointType_EPM">電磁開關(EPM)</string>
     <string name="waypointType_Circle">盤旋</string>
-    <string name="waypointType_Loiter">停懸</string>
-    <string name="waypointType_ROI">興趣點</string>
+    <string name="waypointType_Loiter">停懸</string>    
+    <string name="waypointType_ROI">感興趣區域</string>    
     <string name="waypointType_Survey">探勘多邊形</string>
+    <string name="waypointType_BuildingMapper">建築物測繪</string>
 
     <!-- Waypoint info -->
     <string name="waypointInfo_Land">在目前位置降落無人機。您必須手動退出自動模式並上鎖馬達。</string>
@@ -176,17 +183,24 @@
     <string name="waypointInfo_CondDistance">延遲任務狀態直到在下一個航點的預定距離內。</string>
     <string name="waypointInfo_SetHome">家 的位置可設定成目前位置，或是指定位置。</string>
     <string name="waypointInfo_SetSpeed">改變速度和(或)油門設定點。如果不需改變速度和油門，請設-1。</string>
+    <string name="waypointInfo_CameraTrigger">在固定間隔距離觸發攝影機快門T。</string>
+    <string name="waypointInfo_SetServo">設置持定的PWM值驅動伺服機。</string>
+    <string name="waypointInfo_EpmGrabber">釋放電磁開關上的載重物。</string>
     <string name="waypointInfo_ROI">設定特定的位置及高度為無人機的目的地，若有裝置相機則會指定目標朝向。</string>
     <string name="waypointInfo_SetJump">重覆航點</string>
 
     <!-- Waypoint editor -->
     <string name="editor_err_land_rtl_added">航點無法加在降落或返航的任務之後。</string>
     <string name="editor_info_window">距離: 0公尺, 飛行時間: 0分00秒</string>
+    <string name="editor_info_window_distance">距離: %s</string>
+    <string name="editor_info_window_flight_time">飛行時間: %1$02d:%2$02d</string>
+    <string name="editor_info_window_heading">朝向: %.0f°</string>
     <string name="distance_to_home">到 家 的距離</string>
     <string name="loiter_time">停懸時間</string>
     <string name="waypoint_delay">往下一個航點前的延遲時間</string>
     <string name="loiter_radius">停懸半徑</string>
     <string name="loiter_ccw">逆時針</string>
+    <string name="circle_radius">盤旋半徑</string>
     <string name="waypoint_altitude">高度</string>
     <string name="waypoint_angle">方向軸(Yaw)角度</string>
     <string name="waypoint_finalaltitude">目標高度</string>
@@ -208,7 +222,10 @@
     <string name="waypoint_jumpto">跳至航點:</string>
     <string name="waypoint_repeat">重覆航點</string>
     <string name="circle_turns">軌跡</string>
-
+    <string name="structure_scan_description">測繪建築物</string>
+    <string name="structure_scan_start_alt">起始高度</string>
+    <string name="structure_scan_step_height">階層高度</string>
+    <string name="stucture_scanner_cross_hatch">交叉方位</string>
     <string name="dlg_clear_mission_title">清除任務</string>
     <string name="dlg_clear_mission_confirm">是否從清除地圖上的所有航點？</string>
 
@@ -250,6 +267,7 @@
 
     <!-- Compass Setup Resource Strings -->
     <string name="setup_mag_title">羅盤校正</string>
+    <string name="setup_mag_start">點擊校正開始羅盤校正程序。校正時請將金屬物品遠離羅盤。</string>
 
     <!-- Accelerometer Setup Resource Strings -->
     <string name="setup_imu_title">加速計校正</string>
@@ -309,8 +327,12 @@
     <string name="telemetry_default_value">0.0</string>
     <string name="climb_rate_label">爬昇速率</string>
     <string name="altitude_label">高度</string>
+    <string name="roi_height_label">感興趣區域高度</string>
     <string name="meter_unit">m</string>
     <string name="speed_unit">m/s</string>
+    <string name="speed_label">速度</string>
+    <string name="length_label">長度</string>
+    <string name="channel_label">頻道</string>    
     <string name="ground_speed_label">地速</string>
     <string name="air_speed_label">空速</string>
     <string name="default_angle_value">--°</string>
@@ -321,9 +343,13 @@
     <string name="mission_control_disarm">上鎖</string>
     <string name="mission_control_land">降落</string>
     <string name="mission_control_takeoff">起飛</string>
+    <string name="mission_control_pause">暫停</string>
     <string name="mission_control_auto">自動</string>
     <string name="mission_control_follow">跟隨</string>
-    <string name="mission_control_dronie">自拍</string>
+    <string name="mission_control_dronie">機拍</string>
+    <string name="mission_control_change_speed">改變速度</string>
+    <string name="mission_control_condition_yaw_angle">目標角度</string>
+    <string name="mission_control_condition_yaw_relative">相對角度</string>
     <string name="telemetry_label">數傳</string>
     <string name="flight_modes_label">飛行模式</string>
     <string name="menu_info_bar">訊息列</string>
@@ -398,7 +424,8 @@
     <string name="pref_title_osm">開放街圖(Open Street Map)偏好設定</string>
     <string name="pref_title_mapbox">MapBox 偏好設定</string>
     <string name="activity_title_map_provider_preferences">地圖供應商偏好設定</string>
-
+    <string name="pref_ui_realtime_footprints_title">即時攝影機畫面</string>
+    <string name="pref_ui_realtime_footprints_summary">即時顯示攝影機拍攝的地面圖片</string>
     <!-- Others (when possible move to a grouping above) -->
     <string name="tune_roll">手動調整 roll 和 pitch 參數。Rate_P 是主要調整的數值。</string>
     <string name="dialog_box_title_altitude">高度</string>
@@ -411,30 +438,88 @@
     <string name="spline_waypoint_toggle">非線性</string>
     <string name="mavlink_version">MAVLink 版本</string>
     <string name="firmware_version">韌體版本</string>
+
     <string name="usage_statistics">統計使用習慣</string>
     <string name="pref_usage_statistics_title">發送使用習慣統計</string>
     <string name="pref_usage_statistics_summary">發送使用習慣統計資料能幫助 DroidPlanner 增進平台完成度</string>
-
     <string name="pref_permanent_notification_title">啟用通知</string>
     <string name="pref_permanent_notification_summary">當連線時，在狀態列上顯示通知內容。</string>
-
     <string name="zoom_fit">符合顯示範圍</string>
     <string name="open_mission_file">打開任務檔</string>
     <string name="save_mission_file">儲存任務檔</string>
-
     <string name="pref_ui_gps_hdop_summary">在訊息列上顯示衛星的 HDOP 值代替 FIX 值</string>
     <string name="pref_ui_gps_hdop_title">顯示衛星的 HDOP 值</string>
-
     <string name="status_disconnecting">斷線中...</string>
     <string name="status_connecting">連線中...</string>
     
     <!-- Help -->
-    <string name="help_item_description">如何設定和實際操作任務，請點我看影片</string>
+    <string name="help_item_description">如何設定和實際操作任務</string>
     <string name="label_advaned">進階設定</string>
     <string name="label_steps_count">階層數</string>
     <string name="label_altitude_step">階層高度</string>
     <string name="menu_search_toggle">切換搜尋</string>
     <string name="dialog_confirm_arming_title">解鎖馬達嗎？</string>
-    <string name="dialog_confirm_arming_msg">注意！螺旋槳將會開始轉動，無人機也會開始起飛程序。</string>
-    
+    <string name="dialog_confirm_arming_msg">注意！螺旋槳將會開始轉動，無人機也將起飛。</string>
+    <string name="radius_label">半徑</string>
+    <string name="menu_action_delete">刪除</string>
+    <string name="menu_action_reverse">反向</string>
+    <string name="menu_action_multi_edit">多重編輯</string>
+    <string name="label_yes_no_dialog_dont_show">不再顯示。</string>
+    <string name="file_saved_success">已儲存</string>
+    <string name="file_saved_error">儲存時發生錯誤</string>
+    <string name="label_enter_filename">輸入檔案名稱</string>
+
+    <!-- Drone locator strings -->
+    <string name="locator">飛行日誌</string>
+    <string name="open_tlog_file">開啟日誌</string>
+    <string name="status_waiting_for_gps">等待GPS…</string>
+
+    <!-- Preference dialogs -->
+    <string name="pref_misc_title">雜項</string>
+    <string name="pref_dialogs_title">偏好</string>
+    <string name="pref_warn_on_arm_title">解鎖按鈕警告</string>
+    <string name="pref_auto_insert_mission_takeoff_rtl_land_title">自動插入 \'起飛\' 以及
+        \'返航\'/\'降落\' 到任務</string>
+    <string name="pref_dialog_entry_always">總是</string>
+    <string name="pref_dialog_entry_never">從不</string>
+    <string name="pref_dialog_entry_ask">詢問</string>
+    <string name="pref_dialog_selection_reset_desc"><![CDATA[欲重設已選擇項目需從: 設定 -> 使用者界面 -> 偏好]]></string>
+    <string name="dialog_confirm_take_off_in_auto_title">在自動模式起飛？</string>
+    <string name="dialog_confirm_take_off_in_auto_msg">注意！現在無人機即將起飛執行任務。</string>
+    <string name="pref_dronie_creation_title">啟動機拍？</string>
+    <string name="pref_dronie_creation_message">在機拍開始前，請往後站離無人機大約8公尺。</string>
+    <string name="editor_multi_edit_no_waypoint_error">沒有航點任務被選取。</string>
+    <string name="failed_start_calibration_message">沒辦法啟動校正程序！</string>
+    <string name="pref_advanced_menu_title">進階選單</string>
+    <string name="pref_advanced_menu_summary">啟用進階選單項目。</string>
+    <string name="pref_licenses">版權</string>
+    <string name="pref_licenses_summary">在這個專案中使用的函式庫(以及其他的版權)</string>
+    <string name="upload_params">上傳參數值</string>
+    <string name="download_params">下載參數值</string>
+    <string name="import_from_device">從檔案匯入</string>
+    <string name="export_to_device">匯出至檔案</string>
+    <string name="pref_title_local">在地化</string>
+
+    <string name="unit_system_entry_auto">自動</string>
+    <string name="unit_system_entry_metric">公制</string>
+    <string name="unit_system_entry_imperial">英制</string>
+    <string name="pref_unit_system_title">單位系統</string>
+    <string name="pref_unit_system_summary">設定此程式所使用的單位系統。</string>
+    <string name="account_label">帳號</string>
+    <string name="label_sign_up">註冊</string>
+    <string name="label_login">登入</string>
+    <string name="label_logout">登出</string>
+    <string name="delete_selected_waypoints_confirm">清除地圖上所選取的航點？</string>
+    <string name="delete_selected_waypoints_title">清除選取的航點</string>
+    <string name="label_select_all">選取全部</string>
+    <string name="guided_scan_roi_set_message">正朝著選擇的位置。</string>
+    <string name="mode_follow_guided_scan">無人機跟隨著地圖上的興趣點。長按在地圖上選取興趣點</string>
+    <string name="pref_no_saved_bluetooth_device_title">沒有藍牙裝置。</string>
+    <string name="label_mission_item_type_selection">選擇航點類型</string>
+    <string name="label_mission_item_type_no_selection">沒有可用的項目</string>
+    <string name="description_mission_item_type_selection">點擊轉盤開啟選項並修改航點類型。</string>
+    <string name="description_mission_item_type_no_selection">沒有適合的類型給目前選擇的物件。</string>
+    <string name="label_vehicle_details">無人機的詳細資料</string>
+    <string name="pref_ground_collision_warning_title">地面衝擊</string>
+    <string name="pref_ground_collision_warning_summary">這是有關即將面臨與地面衝擊的警告。</string>
 </resources>
